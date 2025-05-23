@@ -1,0 +1,223 @@
+.player-list {
+  padding: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgba(78, 99, 134, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(228, 241, 255, 0.2);
+}
+
+.player-list-title {
+  font-size: 1.2rem;
+  color: #e4f1ff;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(228, 241, 255, 0.3);
+  flex-shrink: 0;
+  text-shadow: 0 0 10px rgba(228, 241, 255, 0.5);
+}
+
+.players {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 8px;
+  height: 100%;
+  /* 스크롤 제거, 6칸 균등 분할을 위해 flex-grow 사용 */
+}
+
+.players::-webkit-scrollbar {
+  width: 6px;
+}
+
+.players::-webkit-scrollbar-track {
+  background: rgba(78, 99, 134, 0.3);
+  border-radius: 3px;
+}
+
+.players::-webkit-scrollbar-thumb {
+  background: rgba(228, 241, 255, 0.2);
+  border-radius: 3px;
+}
+
+.players::-webkit-scrollbar-thumb:hover {
+  background: rgba(228, 241, 255, 0.3);
+}
+
+.player-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: rgba(78, 99, 134, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(228, 241, 255, 0.2);
+  transition: all 0.3s ease;
+  flex-basis: 0;
+  flex-grow: 1;
+  min-height: unset;
+  /* 6명일 때만 꽉 차고, 그 미만일 때는 위에서부터 채워짐 */
+}
+
+.player-item:hover {
+  transform: translateY(-2px);
+  background: rgba(78, 99, 134, 0.6);
+  border: 1px solid rgba(228, 241, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(228, 241, 255, 0.15);
+}
+
+.player-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+  border: 2px solid rgba(228, 241, 255, 0.3);
+  box-shadow: 0 0 10px rgba(228, 241, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.player-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.player-nickname {
+  font-weight: 600;
+  color: #e4f1ff;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 10px rgba(228, 241, 255, 0.3);
+}
+
+.player-score {
+  font-size: 0.9rem;
+  color: #b8d8ff;
+}
+
+/* 태블릿 */
+@media screen and (max-width: 1024px) {
+  .player-list {
+    padding: 12px;
+  }
+
+  .player-list-title {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .players {
+    gap: 10px;
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+  .player-list-title {
+    display: none;
+  }
+  .players {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    padding: 0;
+    height: 40px;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    min-width: 0;
+    white-space: nowrap;
+    scrollbar-width: thin;
+  }
+  .player-item,
+  .player-placeholder {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 4px;
+    min-height: 32px;
+    border-radius: 6px;
+    background: rgba(78,99,134,0.25);
+    border: 1px solid rgba(228,241,255,0.10);
+    gap: 2px;
+    flex: none;
+    height: 32px;
+    min-width: 0;
+    box-shadow: none;
+  }
+  .player-avatar {
+    width: 22px;
+    height: 22px;
+    margin-right: 2px;
+    border-radius: 50%;
+    border: 1px solid rgba(228,241,255,0.15);
+  }
+  .player-nickname {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    color: #e4f1ff;
+    font-weight: 400;
+    max-width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .player-score {
+    font-size: 0.7rem;
+    color: #b8d8ff;
+    margin-left: 2px;
+    display: none;
+  }
+  .player-placeholder {
+    background: rgba(78,99,134,0.08);
+    border: 1px dashed rgba(228,241,255,0.08);
+  }
+}
+
+/* 작은 모바일 */
+@media screen and (max-width: 480px) {
+  .player-list {
+    padding: 10px;
+  }
+
+  .player-list-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .players {
+    grid-template-columns: 1fr;
+  }
+
+  .player-item {
+    padding: 8px;
+  }
+
+  .player-avatar {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+
+  .player-nickname {
+    font-size: 0.9rem;
+  }
+
+  .player-score {
+    font-size: 0.8rem;
+  }
+}
+
+.player-placeholder {
+  background: rgba(78, 99, 134, 0.15);
+  border: 1px dashed rgba(228, 241, 255, 0.15);
+  box-shadow: none;
+  cursor: default;
+  pointer-events: none;
+} 

@@ -1,0 +1,53 @@
+/* Button styles */
+.btn {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-mint {
+  background-color: rgba(158, 227, 219, 0.9);
+  color: #1a1a1a;
+}
+
+.btn-mint:hover:not(:disabled) {
+  background-color: rgba(158, 227, 219, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Input styles */
+.input-box {
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(158, 227, 219, 0.9);
+  color: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.input-box:focus {
+  outline: none;
+  background-color: rgba(158, 227, 219, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Image button styles */
+.img-btn {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.img-btn:hover {
+  transform: translateY(-2px);
+} 

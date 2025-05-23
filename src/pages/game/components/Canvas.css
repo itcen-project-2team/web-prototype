@@ -1,0 +1,204 @@
+.canvas-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.canvas-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 12px 20px;
+  background: rgba(228, 241, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(228, 241, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.tool-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.color-picker,
+.line-width {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #e4f1ff;
+}
+
+.color-picker input[type="color"] {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid rgba(228, 241, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.line-width input[type="range"] {
+  width: 100px;
+  height: 4px;
+  background: rgba(228, 241, 255, 0.2);
+  border-radius: 2px;
+  -webkit-appearance: none;
+}
+
+.line-width input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #e4f1ff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(228, 241, 255, 0.3);
+}
+
+.clear-btn,
+.undo-btn {
+  background: rgba(228, 241, 255, 0.1);
+  color: #e4f1ff;
+  border: 1px solid rgba(228, 241, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  flex-shrink: 0;
+  text-shadow: 0 0 10px rgba(228, 241, 255, 0.3);
+}
+
+.clear-btn {
+  background: rgba(255, 82, 82, 0.2);
+  border: 1px solid rgba(255, 82, 82, 0.4);
+  color: #ffe4e4;
+  text-shadow: 0 0 10px rgba(255, 228, 228, 0.3);
+}
+
+.clear-btn:hover {
+  background: rgba(255, 82, 82, 0.3);
+  border: 1px solid rgba(255, 82, 82, 0.6);
+  box-shadow: 0 0 15px rgba(255, 82, 82, 0.2);
+}
+
+.undo-btn:hover {
+  background: rgba(228, 241, 255, 0.2);
+  border: 1px solid rgba(228, 241, 255, 0.4);
+  box-shadow: 0 0 15px rgba(228, 241, 255, 0.1);
+}
+
+.undo-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(228, 241, 255, 0.05);
+  border: 1px solid rgba(228, 241, 255, 0.1);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.canvas-wrapper {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  background: #f0f8ff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  touch-action: none;
+  box-sizing: border-box;
+}
+
+/* 태블릿 */
+@media screen and (max-width: 1024px) {
+  .canvas-container {
+    padding: 12px;
+  }
+
+  .canvas-tools {
+    padding: 10px 16px;
+    margin-bottom: 12px;
+  }
+
+  .tool-group {
+    gap: 16px;
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+  .canvas-container {
+    padding: 8px;
+  }
+
+  .canvas-tools {
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .tool-group {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .line-width input[type="range"] {
+    width: 60px;
+  }
+
+  .clear-btn, .undo-btn {
+    padding: 6px 10px;
+    font-size: 0.95rem;
+    flex: 1;
+    margin: 0 2px;
+    min-width: 0;
+  }
+
+  .canvas-wrapper {
+    height: 60vw;
+    max-height: 80vw;
+    min-height: 240px;
+  }
+}
+
+/* 작은 모바일 */
+@media screen and (max-width: 480px) {
+  .tool-group {
+    gap: 12px;
+  }
+
+  .color-picker input[type="color"] {
+    width: 28px;
+    height: 28px;
+  }
+
+  .canvas-wrapper {
+    height: 70vw;
+    max-height: 95vw;
+    min-height: 180px;
+  }
+} 

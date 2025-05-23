@@ -1,0 +1,245 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.landing-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: url('../../assets/drawcen-bg.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.landing-content {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(78, 99, 134, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(228, 241, 255, 0.2);
+  padding: 40px;
+  color: #e4f1ff;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin: 20px 0;
+}
+
+.game-title {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title-top {
+  font-size: 1.5rem;
+  color: #b8d8ff;
+}
+
+.title-bottom {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #e4f1ff 0%, #b8d8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(228, 241, 255, 0.5);
+}
+
+.game-description {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.main-desc {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.feature-item {
+  background: rgba(78, 99, 134, 0.5);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(228, 241, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  background: rgba(78, 99, 134, 0.6);
+  border-color: rgba(228, 241, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(228, 241, 255, 0.1);
+}
+
+.feature-icon {
+  font-size: 2rem;
+}
+
+.feature-text {
+  font-size: 1.1rem;
+}
+
+.how-to-play {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.how-to-play h2 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  color: #e4f1ff;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.step {
+  background: rgba(78, 99, 134, 0.5);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(228, 241, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  background: rgba(78, 99, 134, 0.6);
+  border-color: rgba(228, 241, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(228, 241, 255, 0.1);
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  background: rgba(228, 241, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 auto 12px;
+}
+
+.step-text {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.kakao-login-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.kakao-login-btn:hover {
+  transform: scale(1.02);
+}
+
+.kakao-login-btn img {
+  width: 300px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.drawcen-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: -5px;
+  filter: drop-shadow(0 0 20px rgba(228, 241, 255, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-content {
+    padding: 24px;
+  }
+
+  .drawcen-logo {
+    width: 160px;
+    margin-bottom: 20px;
+  }
+
+  .kakao-login-btn img {
+    width: 250px;
+    height: 40px;
+  }
+
+  .title-bottom {
+    font-size: 2.5rem;
+  }
+
+  .main-desc {
+    font-size: 1.1rem;
+  }
+
+  .feature-list,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-content {
+    padding: 20px;
+  }
+
+  .drawcen-logo {
+    width: 120px;
+    margin-bottom: 16px;
+  }
+
+  .kakao-login-btn img {
+    width: 200px;
+    height: 35px;
+  }
+
+  .title-bottom {
+    font-size: 2rem;
+  }
+
+  .main-desc {
+    font-size: 1rem;
+  }
+} 
